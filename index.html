@@ -543,24 +543,30 @@
         }
 
         /* Video Embed */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            margin: 25px 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-            border: 2px solid rgba(165, 180, 252, 0.2);
+        .video-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        .video-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(118, 75, 162, 0.5);
+            background: linear-gradient(135deg, #764ba2, #f093fb);
+        }
+
+        .video-link::before {
+            content: '▶ ';
+            margin-right: 8px;
         }
 
         /* Elevator Pitch */
@@ -908,9 +914,7 @@
             <h2>Module 4: Professional Introduction (Elevator Pitch)</h2>
             
             <h3>Video Presentation</h3>
-            <div class="video-container">
-                <iframe src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f59f6396-5328-45ba-89b4-b388002d6c91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
-            </div>
+            <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f59f6396-5328-45ba-89b4-b388002d6c91" target="_blank" class="video-link">Watch Professional Introduction Video</a>
             
             <h3>Full Version (60 seconds)</h3>
             <div class="elevator-pitch">
@@ -932,9 +936,7 @@
             <h2>Module 8: Tell Me About Yourself</h2>
             
             <h3>Video Presentation</h3>
-            <div class="video-container">
-                <iframe src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d28f0d15-f796-47ed-99c1-b388002eb26e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
-            </div>
+            <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d28f0d15-f796-47ed-99c1-b388002eb26e" target="_blank" class="video-link">Watch Tell Me About Yourself Video</a>
             
             <h3>Written Response</h3>
             <p style="line-height: 1.8; margin-bottom: 15px;">
