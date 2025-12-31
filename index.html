@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachet Kanchugar - E-Portfolio</title>
+    <title>Sachet Kanchugar - Professional Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated background */
         body::before {
             content: '';
             position: fixed;
@@ -46,7 +45,6 @@
             50% { transform: scale(1.2) rotate(5deg); }
         }
 
-        /* Header/Banner */
         .banner {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
@@ -78,16 +76,6 @@
             50% { transform: translateY(-20px) scale(1.05); }
         }
 
-        .banner::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, #1a1a2e);
-        }
-
         .profile-photo {
             width: 180px;
             height: 180px;
@@ -101,26 +89,19 @@
             font-size: 70px;
             font-weight: 800;
             font-family: 'Space Grotesk', sans-serif;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            animation: profilePulse 3s ease-in-out infinite;
             position: relative;
             z-index: 1;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4),
-                        0 0 0 10px rgba(255, 255, 255, 0.1),
-                        inset 0 0 30px rgba(255, 255, 255, 0.5);
-            animation: profilePulse 3s ease-in-out infinite;
         }
 
         @keyframes profilePulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), 0 0 0 10px rgba(255, 255, 255, 0.1); }
-            50% { transform: scale(1.05); box-shadow: 0 25px 70px rgba(118, 75, 162, 0.5), 0 0 0 15px rgba(255, 255, 255, 0.15); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .profile-photo::before {
             content: 'SK';
-            position: absolute;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             background-clip: text;
@@ -130,47 +111,34 @@
         .banner h1 {
             font-size: 3.5em;
             margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            z-index: 1;
         }
 
         .banner p {
             font-size: 1.3em;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
             position: relative;
             z-index: 1;
-            opacity: 0.95;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Navigation */
         nav {
             background: rgba(15, 15, 30, 0.85);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-                        0 0 0 1px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border-bottom: 1px solid rgba(102, 126, 234, 0.1);
         }
 
@@ -194,20 +162,6 @@
             transition: all 0.3s ease;
             padding: 8px 16px;
             border-radius: 8px;
-            position: relative;
-            font-size: 0.95em;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: width 0.3s ease;
         }
 
         nav a:hover {
@@ -215,49 +169,26 @@
             background: rgba(102, 126, 234, 0.1);
         }
 
-        nav a:hover::after {
-            width: 70%;
-        }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
-            position: relative;
         }
 
-        /* Section Styling */
         .section {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             margin-bottom: 40px;
             padding: 50px;
             border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                        0 0 0 1px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.4s ease;
-            animation: fadeIn 0.6s ease-out;
         }
 
         .section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.2),
-                        0 0 0 1px rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.2);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.2);
         }
 
         .section h2 {
@@ -271,18 +202,6 @@
             border-bottom: 2px solid rgba(165, 180, 252, 0.3);
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, #a5b4fc, #c4b5fd);
         }
 
         .section h3 {
@@ -294,256 +213,13 @@
             font-weight: 600;
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .about-text {
+        .content {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1em;
             line-height: 1.9;
-            color: rgba(255, 255, 255, 0.95);
         }
 
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.05em;
-        }
-
-        .skills-list {
-            background: rgba(102, 126, 234, 0.12);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(165, 180, 252, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .skills-list h3 {
-            margin-top: 0 !important;
-            margin-bottom: 20px;
-        }
-
-        .skills-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .skills-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(165, 180, 252, 0.2);
-            color: rgba(255, 255, 255, 0.95);
-            transition: all 0.3s ease;
-        }
-
-        .skills-list li:last-child {
-            border-bottom: none;
-        }
-
-        .skills-list li:hover {
-            padding-left: 10px;
-            color: #fff;
-        }
-
-        .skills-list li::before {
-            content: "◆ ";
-            background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .skills-list li strong {
-            color: #e0e7ff;
-            font-weight: 600;
-        }
-
-        /* Goals */
-        .goal-item {
-            background: linear-gradient(135deg, rgba(165, 180, 252, 0.15), rgba(196, 181, 253, 0.12));
-            padding: 25px;
-            margin-bottom: 20px;
-            border-left: 4px solid;
-            border-image: linear-gradient(180deg, #a5b4fc, #c4b5fd) 1;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        .goal-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 6px 30px rgba(165, 180, 252, 0.25);
-        }
-
-        .goal-item strong {
-            color: #e0e7ff;
-            display: block;
-            margin-bottom: 12px;
-            font-size: 1.15em;
-            font-weight: 600;
-        }
-
-        /* Experience Cards */
-        .experience-card {
-            background: linear-gradient(135deg, rgba(165, 180, 252, 0.12), rgba(196, 181, 253, 0.1));
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 16px;
-            border-left: 4px solid;
-            border-image: linear-gradient(180deg, #c4b5fd, #fbcfe8) 1;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s ease;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 35px rgba(118, 75, 162, 0.3);
-        }
-
-        .experience-card h4 {
-            background: linear-gradient(135deg, #a5b4fc, #fbcfe8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.4em;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .experience-card .meta {
-            color: rgba(255, 255, 255, 0.75);
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-        }
-
-        .experience-card ul {
-            margin-left: 20px;
-        }
-
-        .experience-card li {
-            margin-bottom: 12px;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.7;
-        }
-
-        /* Projects */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .project-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            color: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.5);
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-card h4 {
-            font-size: 1.4em;
-            margin-bottom: 12px;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-card .tech {
-            background: rgba(255,255,255,0.25);
-            backdrop-filter: blur(10px);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            display: inline-block;
-            margin-bottom: 18px;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-card ul {
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-card li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        /* Companies */
-        .company-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .company-card {
-            background: rgba(165, 180, 252, 0.12);
-            padding: 25px;
-            border-radius: 16px;
-            border: 2px solid rgba(165, 180, 252, 0.3);
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .company-card:hover {
-            border-color: #764ba2;
-            box-shadow: 0 8px 35px rgba(102, 126, 234, 0.3);
-            transform: translateY(-5px);
-            background: rgba(102, 126, 234, 0.08);
-        }
-
-        .company-card h4 {
-            background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-            font-weight: 700;
-            font-size: 1.2em;
-        }
-
-        .company-card p {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-        }
-
-        /* Video Embed */
-        .video-link {
+        .link-button {
             display: inline-block;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -552,139 +228,49 @@
             border-radius: 12px;
             font-size: 1.1em;
             font-weight: 600;
-            margin: 20px 0;
+            margin: 20px 10px 20px 0;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .video-link:hover {
+        .link-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(118, 75, 162, 0.5);
             background: linear-gradient(135deg, #764ba2, #f093fb);
         }
 
-        .video-link::before {
+        .link-button::before {
             content: '▶ ';
             margin-right: 8px;
         }
 
-        /* Elevator Pitch */
-        .elevator-pitch {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            font-size: 1.1em;
-            line-height: 2;
-            margin: 30px 0;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .elevator-pitch::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-        }
-
-        /* Events */
-        .event-list {
-            margin-top: 30px;
-        }
-
-        .event-item {
-            background: linear-gradient(135deg, rgba(196, 181, 253, 0.15), rgba(251, 207, 232, 0.1));
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 16px;
-            border-left: 4px solid;
-            border-image: linear-gradient(180deg, #c4b5fd, #fbcfe8) 1;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .event-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 6px 30px rgba(118, 75, 162, 0.25);
-        }
-
-        .event-item h4 {
-            background: linear-gradient(135deg, #c4b5fd, #fbcfe8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .event-item p {
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.7;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            text-align: center;
-            padding: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            color: white;
-            border-radius: 24px;
-            box-shadow: 0 15px 60px rgba(102, 126, 234, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-
-        .contact-info h2 {
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info p {
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.25em;
-            font-weight: 600;
-            border: 2px solid white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            display: inline-block;
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
             margin-top: 20px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            z-index: 1;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
         }
 
-        .contact-info a:hover {
-            background: white;
-            color: #667eea;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(165, 180, 252, 0.12);
+            color: #e0e7ff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(165, 180, 252, 0.3);
         }
 
-        /* Footer */
+        .social-button:hover {
+            background: rgba(165, 180, 252, 0.2);
+            border-color: rgba(165, 180, 252, 0.5);
+            transform: translateY(-2px);
+        }
+
         footer {
             background: rgba(15, 15, 30, 0.9);
             backdrop-filter: blur(20px);
@@ -695,372 +281,95 @@
             border-top: 1px solid rgba(102, 126, 234, 0.2);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav li {
-                margin: 8px 0;
-            }
-
-            .banner {
-                padding: 80px 20px;
-                min-height: 60vh;
-            }
-
-            .banner h1 {
-                font-size: 2.2em;
-            }
-
-            .banner p {
-                font-size: 1.1em;
-            }
-
-            .profile-photo {
-                width: 140px;
-                height: 140px;
-                font-size: 60px;
-            }
-
-            .section {
-                padding: 30px 25px;
-            }
-
-            .section h2 {
-                font-size: 2em;
-            }
-
-            .project-grid,
-            .company-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .print-button {
-                bottom: 20px;
-                right: 20px;
-                padding: 14px 24px;
-                font-size: 14px;
-            }
-
-            .contact-info {
-                padding: 40px 25px;
-            }
-
-            .elevator-pitch {
-                padding: 30px 20px;
-                font-size: 1em;
-            }
-        }
-
-        /* Print Button */
-        .print-button {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 18px 32px;
-            border-radius: 60px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 1000;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .print-button:hover {
-            background: linear-gradient(135deg, #764ba2, #f093fb);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(118, 75, 162, 0.6);
-        }
-
-        .print-button:active {
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        @media print {
-            .print-button, nav { display: none; }
-            body { background: white; color: black; }
-            .section { box-shadow: none; border: 1px solid #ddd; }
+            .banner { padding: 80px 20px; min-height: 60vh; }
+            .banner h1 { font-size: 2.2em; }
+            .banner p { font-size: 1.1em; }
+            .profile-photo { width: 140px; height: 140px; font-size: 60px; }
+            .section { padding: 30px 25px; }
+            .section h2 { font-size: 2em; }
+            .section h3 { font-size: 1.3em; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav li { margin: 8px 0; }
+            .link-button { font-size: 1em; padding: 14px 24px; }
+            .social-links { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <!-- Banner -->
     <div class="banner">
-        <div class="profile-photo">SK</div>
+        <div class="profile-photo"></div>
         <h1>Sachet Kanchugar</h1>
         <p>Full Stack Developer | MS Computer Science @ Northeastern University</p>
     </div>
 
-    <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#goals">Career Goals</a></li>
+            <li><a href="#elevator-pitch">Elevator Pitch</a></li>
+            <li><a href="#introduction">Introduction</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><a href="#introduction">Professional Introduction</a></li>
-            <li><a href="#tell-me">Tell Me About Yourself</a></li>
-            <li><a href="#strategy">Job Search Strategy</a></li>
+            <li><a href="#job-search">Job Search Strategy</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate Full Stack Developer currently pursuing my Master of Science in Computer Science at Northeastern University with a perfect 4.0 GPA. With over two years of professional experience at Tata Consultancy Services, I have developed a strong foundation in building scalable, high-performance web applications that serve thousands of users.</p>
-                    
-                    <p>My expertise spans the full development stack, from creating responsive React front-ends to optimizing backend systems and databases. I'm particularly passionate about emerging technologies like blockchain and Web 3.0, having built a decentralized travel agency platform that processed over 1,000 cryptocurrency transactions.</p>
-                    
-                    <p>Beyond technical skills, I value collaboration, mentorship, and continuous learning. I've mentored junior developers, improved code quality standards, and consistently delivered measurable results that enhance user experience and system performance.</p>
-                </div>
-                
-                <div class="skills-list">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li><strong>Languages:</strong> Java, Python, C/C++, SQL, JavaScript, HTML, CSS</li>
-                        <li><strong>Frameworks:</strong> React, Node.js, Flask, WordPress, Material-UI, FastAPI</li>
-                        <li><strong>Tools:</strong> Git, Docker, TravisCI, Google Cloud Platform, VS Code</li>
-                        <li><strong>Libraries:</strong> Pandas, NumPy, Matplotlib, TensorFlow, Scikit-learn</li>
-                        <li><strong>Specialties:</strong> Full Stack Development, Performance Optimization, Blockchain, Agile Methodologies</li>
-                    </ul>
-                </div>
+        <!-- Elevator Pitch Section -->
+        <section id="elevator-pitch" class="section">
+            <h2>Module 4: Professional Elevator Pitch</h2>
+            <div class="content">
+                <p>Watch my professional elevator pitch where I introduce myself, my background, and my career aspirations.</p>
+                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a5a1216e-3bd0-4098-9ba3-b3c4013e52e4" target="_blank" class="link-button">Watch Elevator Pitch Video</a>
             </div>
         </section>
 
-        <!-- Career Goals -->
-        <section id="goals" class="section">
-            <h2>Career Goals</h2>
-            
-            <div class="goal-item">
-                <strong>Goal 1: Secure Software Engineer Role</strong>
-                Secure a Full Stack Developer or Software Engineer position at a leading tech company or innovative startup by June 2026 that allows me to utilize my React and Node.js expertise while earning a salary of at least $90,000-$110,000.
-            </div>
-            
-            <div class="goal-item">
-                <strong>Goal 2: Cloud Technology Expertise</strong>
-                Develop advanced expertise in cloud technologies (AWS/Google Cloud Platform) and microservices architecture by completing Google Cloud Professional Developer certification and building 2 production-level cloud-native applications by September 2026.
-            </div>
-            
-            <div class="goal-item">
-                <strong>Goal 3: Professional Network Growth</strong>
-                Build a professional network of 75+ meaningful connections in the software development and blockchain technology fields within the next 9 months by attending 2 networking events per month, joining 3 professional tech communities, and conducting 8 informational interviews with senior developers.
-            </div>
-            
-            <div class="goal-item">
-                <strong>Goal 4: Career Advancement</strong>
-                Transition from Full Stack Developer to Senior Software Engineer role within 3 years, with demonstrable leadership experience managing 2-3 developers and contributing to architectural decisions, with progress reviewed every 6 months through mentorship relationships and project leadership opportunities.
+        <!-- Introduction Section -->
+        <section id="introduction" class="section">
+            <h2>Module 8: Tell Me About Yourself</h2>
+            <div class="content">
+                <p>A comprehensive introduction about my journey in technology, my professional experience, and what drives me as a developer.</p>
+                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=da9d2a4a-77d1-41b3-9879-b3c4013ce703" target="_blank" class="link-button">Watch Introduction Video</a>
             </div>
         </section>
 
-        <!-- Resume/Experience -->
+        <!-- Resume Section -->
         <section id="resume" class="section">
             <h2>Module 7: Professional Resume</h2>
-            
-            <div class="experience-card">
-                <h4>Full Stack Developer</h4>
-                <div class="meta">Tata Consultancy Services, Mumbai, MH | May 2023 – Aug. 2025</div>
-                <ul>
-                    <li>Implemented user stories in web development for banking websites, delivering 15+ features across 3 major client projects and improving user experience for over 50,000 daily active users</li>
-                    <li>Developed responsive front-end components using React and JavaScript, reducing page load times by 25% and increasing customer satisfaction scores by 18%</li>
-                    <li>Collaborated with cross-functional teams of 8+ developers using Agile methodologies, completing sprint goals with 95% on-time delivery rate across 20+ two-week sprints</li>
-                    <li>Optimized database queries and API endpoints, resulting in 30% faster transaction processing and enhanced system performance for high-traffic banking operations</li>
-                    <li>Conducted code reviews and mentored 3 junior developers, improving team code quality and reducing production bugs by 22%</li>
-                </ul>
-            </div>
-
-            <h3>Key Projects</h3>
-            
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>DeFi Travels: Blockchain Travel Agency</h4>
-                    <div class="tech">Solidity | Node.js | React.js</div>
-                    <ul>
-                        <li>Designed and built a Travel Agency DeFi Portal leveraging Web 3.0 blockchain technology with 350+ transactions in first month</li>
-                        <li>Integrated Metamask wallet enabling 1,000+ successful cryptocurrency transactions</li>
-                        <li>Implemented smart contracts for secure bookings, reducing dispute resolution time by 60%</li>
-                    </ul>
-                </div>
-                
-                <div class="project-card">
-                    <h4>Global COVID Cases Tracker</h4>
-                    <div class="tech">Python | Pandas | Matplotlib</div>
-                    <ul>
-                        <li>Created animated bar chart race visualizing COVID-19 data for 190+ countries</li>
-                        <li>Automated data collection processing 1M+ data points daily with 99.8% accuracy</li>
-                        <li>Attracted 5,000+ viewers with engaging real-time data insights</li>
-                    </ul>
-                </div>
+            <div class="content">
+                <p>View my detailed professional resume showcasing my education, work experience, technical skills, and projects.</p>
+                <a href="https://smallpdf.com/file#s=f1969b8e-69f9-415d-8558-ba542062b1f6" target="_blank" class="link-button">View Resume (PDF)</a>
             </div>
         </section>
 
-        <!-- Professional Introduction -->
-        <section id="introduction" class="section">
-            <h2>Module 4: Professional Introduction (Elevator Pitch)</h2>
-            
-            <h3>Video Presentation</h3>
-            <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f59f6396-5328-45ba-89b8-b388002d6c91" target="_blank" class="video-link">Watch Professional Introduction Video</a>
-            
-            <h3>Full Version (60 seconds)</h3>
-            <div class="elevator-pitch">
-                "Hi, I'm Sachet Kanchugar, a Full Stack Developer and current Master's student in Computer Science at Northeastern University with a 4.0 GPA. I have over two years of professional experience at Tata Consultancy Services, where I built responsive web applications for banking clients serving 50,000+ daily users. I'm particularly skilled in React, Node.js, and performance optimization—I reduced page load times by 25% and improved transaction processing speed by 30% through database and API optimization.
-                <br><br>
-                Beyond traditional web development, I'm passionate about emerging technologies. I designed and built a blockchain-based travel agency using Solidity and Web 3.0, which processed over 1,000 cryptocurrency transactions and demonstrated my ability to innovate with cutting-edge tech. I also have experience with data visualization and automation, having built a COVID-19 tracker that processed over 1 million data points daily.
-                <br><br>
-                I'm currently seeking Full Stack or Software Engineer opportunities where I can leverage my expertise in building scalable, high-performance applications while continuing to grow in areas like cloud architecture and distributed systems. What sets me apart is my combination of strong technical skills, proven track record of delivering measurable results, and experience mentoring junior developers. I thrive in collaborative, fast-paced environments where I can contribute to meaningful projects that impact users at scale."
-            </div>
-            
-            <h3>Networking Version (30 seconds)</h3>
-            <div class="elevator-pitch">
-                "I'm Sachet Kanchugar, a Full Stack Developer pursuing my Master's in Computer Science at Northeastern. I specialize in building high-performance web applications using React and Node.js. At Tata Consultancy Services, I delivered 15+ features for banking platforms serving 50,000+ users and improved system performance by 30%. I'm also passionate about blockchain—I built a DeFi travel platform that processed over 1,000 transactions. I'm looking to bring this expertise to innovative companies working on scalable applications, whether in fintech, Web3, or cloud technologies."
-            </div>
-        </section>
-
-        <!-- Tell Me About Yourself -->
-        <section id="tell-me" class="section">
-            <h2>Module 8: Tell Me About Yourself</h2>
-            
-            <h3>Video Presentation</h3>
-            <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d28f0d15-f796-47ed-99c1-b388002eb26e" target="_blank" class="video-link">Watch Tell Me About Yourself Video</a>
-            
-            <h3>Written Response</h3>
-            <p style="line-height: 1.8; margin-bottom: 15px;">
-                My journey in technology began with a fascination for how software can solve real-world problems at scale. During my undergraduate studies, I developed strong programming foundations and discovered my passion for web development through building data visualization projects, including a COVID-19 tracker that reached thousands of users.
-            </p>
-            
-            <p style="line-height: 1.8; margin-bottom: 15px;">
-                This passion led me to Tata Consultancy Services, where I spent over two years as a Full Stack Developer working on banking applications. It was an incredible learning experience—I got to work with cross-functional teams, deliver features that impacted 50,000+ daily users, and see firsthand how performance optimization can dramatically improve user experience. One of my proudest achievements was reducing page load times by 25% and transaction processing time by 30%, which directly translated to better customer satisfaction scores.
-            </p>
-            
-            <p style="line-height: 1.8; margin-bottom: 15px;">
-                What really excites me about software engineering is the opportunity to work with emerging technologies. Outside of my day job, I built a blockchain-based travel agency using Solidity and Web 3.0 technology. It was challenging—integrating Metamask wallets, implementing smart contracts, ensuring security—but incredibly rewarding when we processed over 1,000 transactions successfully. This experience showed me that I thrive when pushing boundaries and learning new technologies.
-            </p>
-            
-            <p style="line-height: 1.8; margin-bottom: 15px;">
-                Currently, I'm pursuing my Master's in Computer Science at Northeastern University with a 4.0 GPA, focusing on deepening my knowledge in distributed systems, cloud architecture, and advanced algorithms. I'm also expanding my leadership skills—having mentored junior developers at TCS and reduced production bugs by 22%, I've learned that great software is built by great teams.
-            </p>
-            
-            <p style="line-height: 1.8;">
-                Looking ahead, I'm seeking opportunities where I can combine my full stack expertise with my passion for innovation—whether that's in fintech, Web3, or cloud technologies. I want to work on products that make a meaningful impact, collaborate with talented engineers, and continue growing as both a developer and a leader. I believe my combination of proven technical skills, results-driven approach, and genuine enthusiasm for emerging technologies makes me a strong fit for forward-thinking companies building the future of software.
-            </p>
-        </section>
-
-        <!-- Job Search Strategy -->
-        <section id="strategy" class="section">
+        <!-- Job Search Strategy Section -->
+        <section id="job-search" class="section">
             <h2>Module 9: Job Search Strategy Plan</h2>
-            
-            <h3>Target Companies</h3>
-            <div class="company-grid">
-                <div class="company-card">
-                    <h4>Google</h4>
-                    <p>Leadership in cloud technologies, strong engineering culture, excellent mentorship programs, and opportunities to work on large-scale distributed systems.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Coinbase</h4>
-                    <p>Mission to increase economic freedom through cryptocurrency, aligns with my blockchain/Solidity experience, cutting-edge Web 3.0 work.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Stripe</h4>
-                    <p>Financial technology leadership, developer-first culture, focus on API design and performance optimization, hybrid work flexibility.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Amazon Web Services</h4>
-                    <p>Cloud infrastructure leadership, opportunities to work on scalable systems, strong internal mobility, comprehensive benefits.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Microsoft</h4>
-                    <p>Diverse product portfolio, investment in employee growth, focus on accessibility and inclusive design.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Shopify</h4>
-                    <p>E-commerce innovation, React-based tech stack, remote-first culture, entrepreneurial environment.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Meta</h4>
-                    <p>Created React framework, opportunities to impact billions, cutting-edge VR/AR development, collaborative engineering culture.</p>
-                </div>
-                
-                <div class="company-card">
-                    <h4>Fidelity Investments</h4>
-                    <p>Digital transformation in fintech, blockchain technology research, Boston location, work-life balance.</p>
-                </div>
-            </div>
-
-            <h3>Networking Events</h3>
-            <div class="event-list">
-                <div class="event-item">
-                    <h4>Northeastern University Career Fair - Spring 2026</h4>
-                    <p>150+ employers including Google, Amazon, Microsoft, and fintech companies. Register through Northeastern Handshake portal.</p>
-                </div>
-                
-                <div class="event-item">
-                    <h4>Boston React Meetup</h4>
-                    <p>Connect with React developers from local companies including HubSpot, Wayfair, and startups. Technical talks and networking focused on frontend development trends.</p>
-                </div>
-                
-                <div class="event-item">
-                    <h4>Blockchain & Cryptocurrency Boston Meetup</h4>
-                    <p>Network with professionals in Web3 and blockchain space. Relevant to my DeFi Travels project experience.</p>
-                </div>
-                
-                <div class="event-item">
-                    <h4>Khoury College Alumni Networking Night</h4>
-                    <p>Connect with Northeastern CS alumni working at target companies. Panel discussion on career paths in software engineering.</p>
-                </div>
+            <div class="content">
+                <p>My comprehensive job search strategy including target companies, networking plans, and career goals.</p>
+                <a href="https://smallpdf.com/file#s=ed111ad9-1691-4f79-8f26-716747e2cf89" target="_blank" class="link-button">View Job Search Strategy (PDF)</a>
             </div>
         </section>
 
-        <!-- Contact -->
+        <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="contact-info">
-                <h2 style="color: white; border: none; margin-bottom: 15px;">Let's Connect</h2>
-                <p style="font-size: 1.1em; margin-bottom: 20px;">I'm always interested in discussing new opportunities, collaboration, or just connecting with fellow developers.</p>
-                <a href="mailto:kanchugar.s@northeastern.edu">kanchugar.s@northeastern.edu</a>
+            <h2>Contact & Connect</h2>
+            <div class="content">
+                <p>I'm always interested in discussing new opportunities, collaborations, or just connecting with fellow developers and professionals.</p>
+                
+                <h3>Get in Touch</h3>
+                <p style="margin-bottom: 20px;">Email: <a href="mailto:kanchugar.s@northeastern.edu" style="color: #a5b4fc; text-decoration: none; font-weight: 600;">kanchugar.s@northeastern.edu</a></p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sachet-kanchugar-2a060521a/" target="_blank" class="social-button">
+                        🔗 LinkedIn Profile
+                    </a>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Sachet Kanchugar | Full Stack Developer | MS Computer Science @ Northeastern University</p>
     </footer>
-
-    <!-- Print/Save Button -->
-    <button class="print-button" onclick="window.print()">💾 Save Portfolio</button>
-
-    <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
